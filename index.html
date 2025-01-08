@@ -9,17 +9,11 @@
       background-color: black;
       color: white;
       font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 50px;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
       margin: 0;
-    }
-    audio {
-      display: none; /* Hide the audio player */
     }
     .play-button {
       width: 100px;
@@ -28,63 +22,30 @@
       border-radius: 50%;
       border: none;
       cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 14px;
-      margin-bottom: 20px;
+      position: absolute;
+      z-index: 10;
     }
-    .code-display {
-      background-color: #333;
-      color: white;
-      padding: 20px;
-      border-radius: 10px;
+    .text-content {
       display: none;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to My Website</h1>
-  <p>Press the button to start the music and view the code!</p>
-  <button class="play-button" onclick="playAudioAndShowCode()">Play Music</button>
+  <button class="play-button" onclick="playAudioAndShowText()">Play Music</button>
+  <div class="text-content">
+    <h1>Welcome to My Website</h1>
+    <p>Enjoy the music!</p>
+  </div>
   <audio id="myAudio" loop>
     <source src="https://raw.githubusercontent.com/cherrypow/vancouver/main/evening-bonfire-140108.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
-  <pre class="code-display" id="codeDisplay">
-    &lt;!DOCTYPE html&gt;
-    &lt;html lang="en"&gt;
-    &lt;head&gt;
-      &lt;meta charset="UTF-8"&gt;
-      &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-      &lt;title&gt;Autoplay Audio&lt;/title&gt;
-      &lt;style&gt;
-        body {
-          background-color: black;
-          color: white;
-          font-family: Arial, sans-serif;
-          text-align: center;
-          padding: 50px;
-        }
-        audio {
-          display: none; /* Hide the audio player */
-        }
-      &lt;/style&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-      &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
-      &lt;p&gt;Enjoy the music!&lt;/p&gt;
-      &lt;audio autoplay loop&gt;
-        &lt;source src="https://raw.githubusercontent.com/cherrypow/vancouver/main/evening-bonfire-140108.mp3" type="audio/mpeg"&gt;
-        Your browser does not support the audio element.
-      &lt;/audio&gt;
-    &lt;/body&gt;
-    &lt;/html&gt;
-  </pre>
   <script>
-    function playAudioAndShowCode() {
+    function playAudioAndShowText() {
       document.getElementById('myAudio').play();
-      document.getElementById('codeDisplay').style.display = 'block';
+      document.querySelector('.play-button').style.display = 'none';
+      document.querySelector('.text-content').style.display = 'block';
     }
   </script>
 </body>
