@@ -20,9 +20,17 @@
 <body>
   <h1>Welcome to My Website</h1>
   <p>Enjoy the music!</p>
-  <audio autoplay loop>
+  <audio id="audio" autoplay loop muted>
     <source src="https://raw.githubusercontent.com/cherrypow/vancouver/main/evening-bonfire-140108.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
+
+  <script>
+    // Unmute the audio after a short delay to allow autoplay
+    window.onload = function() {
+      var audio = document.getElementById("audio");
+      audio.muted = false; // Unmute the audio after the page loads
+    };
+  </script>
 </body>
 </html>
