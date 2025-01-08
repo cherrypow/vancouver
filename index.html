@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autoplay Audio</title>
   <style>
     body {
       background-color: black;
@@ -11,19 +12,17 @@
       text-align: center;
       padding: 50px;
     }
-    iframe {
-      margin-top: 20px;
+    audio {
+      display: none; /* Hide the audio player */
     }
   </style>
 </head>
 <body>
-  <h1>A Circle with a Line</h1>
-  <p>Welcome to my website.</p>
-  <iframe 
-    style="border: 0; width: 100%; height: 42px;" 
-    src="https://bandcamp.com/EmbeddedPlayer/album=1546184362/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/" 
-    seamless>
-    <a href="https://binaural-space.bandcamp.com/album/24-bit-48khz">24-bit/48kHz by Binaural Space</a>
-  </iframe>
+  <h1>Welcome to My Website</h1>
+  <p>Enjoy the music!</p>
+  <audio autoplay loop>
+    <source src="URL_TO_YOUR_AUDIO_FILE" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 </body>
 </html>
